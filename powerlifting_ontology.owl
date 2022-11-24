@@ -1,0 +1,729 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY foaf "http://xmlns.com/foaf/0.1/" >
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY dc "http://purl.org/dc/elements/1.1/" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY skos "http://www.w3.org/2004/02/skos/core#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<rdf:RDF xmlns="http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#"
+     xml:base="http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting">
+        <creator rdf:datatype="&xsd;string">Mario Nalato and Andrea Ranieri</creator>
+        <dc:title rdf:datatype="&xsd;string">Powerlifting DB</dc:title>
+        <owl:imports rdf:resource="http://eulersharp.sourceforge.net/2003/03swap/countries"/>
+        <owl:imports rdf:resource="http://xmlns.com/foaf/0.1/"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/title -->
+
+    <owl:AnnotationProperty rdf:about="&dc;title"/>
+    
+
+
+    <!-- http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#creator -->
+
+    <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#creator"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#ageClass -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#ageClass">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#IPFAgeCategory"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#IPFCategory"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#allowsUseOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#allowsUseOf">
+        <rdfs:range rdf:resource="http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#Equipment"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#IPFCategory"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#did -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#did">
+        <rdf:type rdf:resource="&owl;InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#Athlete"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#Competition"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#doneDuring -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#doneDuring">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#Competition"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#Meeting"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#equipment -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#equipment">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#Competition"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#Equipment"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#hostedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#hostedBy">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#Federation"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#Meeting"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#inIPFAge -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#inIPFAge">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#Competition"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#IPFAgeCategory"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#inIPFCategory -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#inIPFCategory">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#Competition"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#IPFCategory"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#inIPFWeight -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#inIPFWeight">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#Competition"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#IPFWeightCategory"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#inState -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#inState">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#Meeting"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#State"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#nationality -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#nationality">
+        <rdfs:range rdf:resource="http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#Country"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#Meeting"/>
+                    <rdf:Description rdf:about="&foaf;Person"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#weightClass -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#weightClass">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#IPFCategory"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#IPFWeightCategory"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#1stBench -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#1stBench">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#Competition"/>
+        <rdfs:range rdf:resource="&xsd;float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#1stDeadlift -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#1stDeadlift">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#Competition"/>
+        <rdfs:range rdf:resource="&xsd;float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#1stSquat -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#1stSquat">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#Competition"/>
+        <rdfs:range rdf:resource="&xsd;float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#2ndBench -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#2ndBench">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#Competition"/>
+        <rdfs:range rdf:resource="&xsd;float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#2ndDeadlift -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#2ndDeadlift">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#Competition"/>
+        <rdfs:range rdf:resource="&xsd;float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#2ndSquat -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#2ndSquat">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#Competition"/>
+        <rdfs:range rdf:resource="&xsd;float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#3rdBench -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#3rdBench">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#Competition"/>
+        <rdfs:range rdf:resource="&xsd;float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#3rdDeadlift -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#3rdDeadlift">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#Competition"/>
+        <rdfs:range rdf:resource="&xsd;float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#3rdSquat -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#3rdSquat">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#Competition"/>
+        <rdfs:range rdf:resource="&xsd;float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#4thBench -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#4thBench">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#Competition"/>
+        <rdfs:range rdf:resource="&xsd;float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#4thDeadlift -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#4thDeadlift">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#Competition"/>
+        <rdfs:range rdf:resource="&xsd;float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#4thSquat -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#4thSquat">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#Competition"/>
+        <rdfs:range rdf:resource="&xsd;float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#IPFScore -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#IPFScore">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#Competition"/>
+        <rdfs:range rdf:resource="&xsd;float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#ageDivision -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#ageDivision">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#Competition"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#athleteAge -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#athleteAge">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#Competition"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#athleteWeight -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#athleteWeight">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#Competition"/>
+        <rdfs:range rdf:resource="&xsd;float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#bestBench -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#bestBench">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#Competition"/>
+        <rdfs:range rdf:resource="&xsd;float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#bestDeadlift -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#bestDeadlift">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#Competition"/>
+        <rdfs:range rdf:resource="&xsd;float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#bestSquat -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#bestSquat">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#Competition"/>
+        <rdfs:range rdf:resource="&xsd;float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#birthYear -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#birthYear">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+        <rdfs:domain rdf:resource="&foaf;Person"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#date -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#date">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#Competition"/>
+        <rdfs:range rdf:resource="&xsd;dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#firstName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#firstName">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain rdf:resource="&foaf;Person"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#glossbrennerScore -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#glossbrennerScore">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#Competition"/>
+        <rdfs:range rdf:resource="&xsd;float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#hasBeenDrugTested -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#hasBeenDrugTested">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#Competition"/>
+        <rdfs:range rdf:resource="&xsd;boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#inEvent -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#inEvent">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#Competition"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#mcCullochScore -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#mcCullochScore">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#Competition"/>
+        <rdfs:range rdf:resource="&xsd;float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#meetDivision -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#meetDivision">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#Competition"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#meetWeightDivision -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#meetWeightDivision">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#Competition"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#name -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#name">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#Country"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#Federation"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#Meeting"/>
+                    <rdf:Description rdf:about="&foaf;Person"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#placed -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#placed">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#Competition"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#sex -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#sex">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:range rdf:resource="&xsd;boolean"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#IPFCategory"/>
+                    <rdf:Description rdf:about="&foaf;Person"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#surname -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#surname">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain rdf:resource="&foaf;Person"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#totalKg -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#totalKg">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#Competition"/>
+        <rdfs:range rdf:resource="&xsd;float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#wilksScore -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#wilksScore">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#Competition"/>
+        <rdfs:range rdf:resource="&xsd;float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#year -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#year">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#Meeting"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#Athlete -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#Athlete">
+        <rdfs:subClassOf rdf:resource="&foaf;Person"/>
+        <rdfs:comment xml:lang="en">class representing the powerlifters</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#Competition -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#Competition">
+        <rdfs:comment xml:lang="en">class representing the athlete performance during a meeting</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#Country -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#Country"/>
+    
+
+
+    <!-- http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#Equipment -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#Equipment">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#Straps"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#Multi-ply"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#Wraps"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#Single-ply"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#Raw"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:comment xml:lang="en">class of equipments used in powerlifter competitions</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#Federation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#Federation">
+        <rdfs:comment xml:lang="en">class representing the federations that hosted the meetings</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#IPFAgeCategory -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#IPFAgeCategory">
+        <rdfs:comment xml:lang="en">class representing the IPF (international) age category the athlete competed in</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#IPFCategory -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#IPFCategory">
+        <rdfs:comment xml:lang="en">class representing the IPF (international) category the athlete competed in</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#IPFWeightCategory -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#IPFWeightCategory">
+        <rdfs:comment xml:lang="en">class representing the IPF (international) weight category the athlete competed in</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#Meeting -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#Meeting">
+        <rdfs:comment xml:lang="en">class representing the powerlifter meetings</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#State -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#State">
+        <rdfs:comment xml:lang="en">class representing the state of the country in which the meeting was held</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/Person -->
+
+    <owl:Class rdf:about="&foaf;Person"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#Multi-ply -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#Multi-ply">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#Equipment"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#Raw -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#Raw">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#Equipment"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#Single-ply -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#Single-ply">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#Equipment"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#Straps -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#Straps">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#Equipment"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#Wraps -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#Wraps">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mario/ontologies/2022/10/powerlifting#Equipment"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net -->
+
